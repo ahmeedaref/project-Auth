@@ -12,11 +12,11 @@ app.use("/", UserRoute);
 mongoose
   .connect(process.env.URL)
   .then(() => {
-    console.log(process.env.THEN);
+    console.log(process.env.CDB);
     app.listen(process.env.PORT, () =>
       console.log(`Server API Port On ${process.env.PORT}`)
     );
   })
   .catch((err) => {
-    console.log(process.env.ERROR);
+    console.log(err);
   });
