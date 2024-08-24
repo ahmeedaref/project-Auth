@@ -10,15 +10,13 @@ require("dotenv").config();
 
 app.use("/", UserRoute);
 mongoose
-  .connect(
-    "mongodb+srv://ahmedaref127:ahmeed1902@backenddb.1rq3a.mongodb.net/Node?retryWrites=true&w=majority&appName=BackendDB"
-  )
+  .connect(process.env.URL)
   .then(() => {
-    console.log("Connected To DB");
+    console.log(process.env.THEN);
     app.listen(process.env.PORT, () =>
       console.log(`Server API Port On ${process.env.PORT}`)
     );
   })
   .catch((err) => {
-    console.log(err);
+    console.log(process.env.ERROR);
   });
