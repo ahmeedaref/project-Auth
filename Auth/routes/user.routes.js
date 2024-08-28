@@ -6,10 +6,27 @@ const router = express.Router();
 const {
   registerUser,
   loginUser,
+  createProduct,
+  getProducts,
+  updateProduct,
+  deleteProduct,
 } = require("../controllers/user.controller.js");
+const {
+  ensureAuth,
+  checkSuperAdmin,
+} = require("../middellwares/middellwares.js");
 
 router.post("/register", registerUser);
 
 router.post("/login", loginUser);
+
+router.post("/", ensureAuth, createProduct);
+
+router.get("/", ensureAuth, getProducts);
+
+router.put("/:id", ensureAuth, checkSuperAdmin, updateProduct);
+
+router.delete("/:id", ensureAuth, checkSuperAdmin, deleteProduct);
+
 
 module.exports = router;

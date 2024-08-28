@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/user.js");
+const Product = require("./models/product.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserRoute = require("./routes/user.routes.js");
