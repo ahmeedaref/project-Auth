@@ -131,5 +131,5 @@ module.exports = {
   createProduct,
   getProducts,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
