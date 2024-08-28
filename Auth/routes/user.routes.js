@@ -8,6 +8,7 @@ const {
   loginUser,
   createProduct,
   getProducts,
+  getproduct,
   updateProduct,
   deleteProduct,
 } = require("../controllers/user.controller.js");
@@ -23,6 +24,8 @@ router.post("/login", loginUser);
 router.post("/", ensureAuth, createProduct);
 
 router.get("/", ensureAuth, getProducts);
+
+router.get("/:id",ensureAuth,checkSuperAdmin,getproduct)
 
 router.put("/:id", ensureAuth, checkSuperAdmin, updateProduct);
 

@@ -124,12 +124,29 @@ const deleteProduct = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
+const getproduct = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user.id });
+    if (!user) {
+      return res.status(404).json({ message: "user not found" });
+    }
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    if (!product) {
+      return res.status(404).json({ message: "product not found" });
+    }
+    res.status(200).json({ message: product });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
 
 module.exports = {
   registerUser,
   loginUser,
   createProduct,
   getProducts,
+  getproduct,
   updateProduct,
   deleteProduct,
 };
