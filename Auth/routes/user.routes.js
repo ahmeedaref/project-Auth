@@ -25,11 +25,10 @@ router.post("/", ensureAuth, createProduct);
 
 router.get("/", ensureAuth, getProducts);
 
-router.get("/:id",ensureAuth,checkSuperAdmin,getproduct)
+router.get("/:id", ensureAuth, getproduct);
 
 router.put("/:id", ensureAuth, checkSuperAdmin, updateProduct);
 
 router.delete("/:id", ensureAuth, checkSuperAdmin, deleteProduct);
-
 
 module.exports = router;
