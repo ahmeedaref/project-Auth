@@ -13,7 +13,7 @@ const {
   deleteProduct,
 } = require("../controllers/user.controller.js");
 const {
-  ensureAuth,
+  checkToken,
   checkSuperAdmin,
 } = require("../middellwares/middellwares.js");
 
@@ -21,14 +21,14 @@ router.post("/register", registerUser);
 
 router.post("/login", loginUser);
 
-router.post("/", ensureAuth, createProduct);
+router.post("/", checkToken, createProduct);
 
-router.get("/", ensureAuth, getProducts);
+router.get("/", checkToken, getProducts);
 
-router.get("/:id", ensureAuth, getproduct);
+router.get("/:id", checkToken, getproduct);
 
-router.put("/:id", ensureAuth, checkSuperAdmin, updateProduct);
+router.put("/:id", checkToken, checkSuperAdmin, updateProduct);
 
-router.delete("/:id", ensureAuth, checkSuperAdmin, deleteProduct);
+router.delete("/:id", checkToken, checkSuperAdmin, deleteProduct);
 
 module.exports = router;

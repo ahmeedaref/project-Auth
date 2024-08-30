@@ -47,13 +47,11 @@ const loginUser = async (req, res) => {
 
     const accessToken = jwt.sign(
       {
-        userId: user._id,
         email: user.email,
-        username: user.username,
         role: user.role,
       },
       process.env.ACCESSTOKENSECRET,
-      { subject: user.role, expiresIn: "1h" }
+      { expiresIn: "1h" }
     );
     res.status(200).json({ message: "Logged Successfully", accessToken });
   } catch (err) {
@@ -63,14 +61,9 @@ const loginUser = async (req, res) => {
 
 const createProduct = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });
-    if (!user) {
-      return res.status(404).json({ message: "user not found" });
-    }
+    const product = await Product.create(req.body);
 
-    const product = await Product.create(req.headers);
-
-    res.status(200).json({ username: user.username, role: user.role, product });
+    res.status(200).json({ message: product });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -78,10 +71,6 @@ const createProduct = async (req, res) => {
 
 const getProducts = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });
-    if (!user) {
-      return res.status(404).json({ message: "user not found" });
-    }
     const product = await Product.find({});
 
     res.status(200).json({ product });
@@ -92,12 +81,8 @@ const getProducts = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });
-    if (!user) {
-      return res.status(404).json({ message: "user not found" });
-    }
     const { id } = req.params;
-    const product = await Product.findByIdAndUpdate(id, req.headers);
+    const product = await Product.findByIdAndUpdate(id, req.body);
     if (!product) {
       return res.status(404).json({ message: "product not found" });
     }
@@ -110,10 +95,6 @@ const updateProduct = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });
-    if (!user) {
-      return res.status(404).json({ message: "user not found" });
-    }
     const { id } = req.params;
     const product = await Product.findByIdAndDelete(id);
     if (!product) {
@@ -126,10 +107,6 @@ const deleteProduct = async (req, res) => {
 };
 const getproduct = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });
-    if (!user) {
-      return res.status(404).json({ message: "user not found" });
-    }
     const { id } = req.params;
     const product = await Product.findById(id);
     if (!product) {

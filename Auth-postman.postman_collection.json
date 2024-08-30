@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"gamal\",\r\n    \"email\":\"gg@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"raw": "{\r\n   \" username\":\"mostafa\",\r\n    \"email\":\"mostafa@gmail.com\",\r\n    \"password\":\"mostafa12345#\",\r\n    \"role\":\"SuperAdmin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,7 +48,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/register",
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -67,25 +68,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4Y2I3MjRlNmE4NjI4YzZkMzI5MDAiLCJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYWhtZWQiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MjQ4NDkzMjAsImV4cCI6MTcyNDg1MjkyMCwic3ViIjoiQWRtaW4ifQ.3TStVfUi03wnuppeE6m9pcXvRJpU71EqQtxIql2eunI",
-						"type": "text"
-					},
-					{
-						"key": "name",
-						"value": "choclate",
-						"type": "text"
-					},
-					{
-						"key": "price",
-						"value": "3.22",
-						"type": "text"
-					},
-					{
-						"key": "quantity",
-						"value": "25",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcyNTA0NTEyMSwiZXhwIjoxNzI1MDQ4NzIxfQ.OKSvh0Y9SSRFOqJBdgksoxZtV7PLKQGM1lM0k9cv-1g",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"phone\",\r\n    \"price\":2500,\r\n    \"quantity\":16\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:8080",
 					"host": [
@@ -103,28 +98,27 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4Y2JlMTRlNmE4NjI4YzZkMzI5MDYiLCJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Imhhc3NhbiIsInJvbGUiOiJTdXBlckFkbWluIiwiaWF0IjoxNzI0ODQ5NTcwLCJleHAiOjE3MjQ4NTMxNzAsInN1YiI6IlN1cGVyQWRtaW4ifQ.h3wvHhsZgBKd34GFilXmuugCIS8feKTUQsylryd74Ns",
-						"type": "text"
-					},
-					{
-						"key": "price",
-						"value": "2.25",
-						"type": "text"
-					},
-					{
-						"key": "quantity",
-						"value": "2.3",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJyb2xlIjoiU3VwZXJBZG1pbiIsImlhdCI6MTcyNTA0NTM1MCwiZXhwIjoxNzI1MDQ4OTUwfQ.-c30vImc_XPtnxFhRttCWc7_99Hsqmpsi8brG2zXFog",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\":3000,\r\n    \"quantity\":25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/66cf1ced151e21516c73a901",
+					"raw": "localhost:8080/66d219caaa0a88319230102c",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"66cf1ced151e21516c73a901"
+						"66d219caaa0a88319230102c"
 					]
 				}
 			},
@@ -158,18 +152,18 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4Y2JlMTRlNmE4NjI4YzZkMzI5MDYiLCJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Imhhc3NhbiIsInJvbGUiOiJTdXBlckFkbWluIiwiaWF0IjoxNzI0ODQ5NTcwLCJleHAiOjE3MjQ4NTMxNzAsInN1YiI6IlN1cGVyQWRtaW4ifQ.h3wvHhsZgBKd34GFilXmuugCIS8feKTUQsylryd74Ns",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJyb2xlIjoiU3VwZXJBZG1pbiIsImlhdCI6MTcyNTA0NTQ5NiwiZXhwIjoxNzI1MDQ5MDk2fQ.qEkp3oeIW3pG_y5AC0JmmXqREG0QCHEAJXT3aNL4skw",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:8080/66cf1ced151e21516c73a901",
+					"raw": "localhost:8080/66d219caaa0a88319230102c",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"66cf1ced151e21516c73a901"
+						"66d219caaa0a88319230102c"
 					]
 				}
 			},
@@ -182,18 +176,18 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4Y2JlMTRlNmE4NjI4YzZkMzI5MDYiLCJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Imhhc3NhbiIsInJvbGUiOiJTdXBlckFkbWluIiwiaWF0IjoxNzI0ODY3Njc1LCJleHAiOjE3MjQ4NzEyNzUsInN1YiI6IlN1cGVyQWRtaW4ifQ.o30_FiQA8bmn5_kZsr0IVRfNJkNhbIWYbcPWkjM6c5g",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcyNTA0NTQwNCwiZXhwIjoxNzI1MDQ5MDA0fQ.-1bMk17H_M4zoDrB28SpjSQMjMcoF8H4U55lJ5fWS_M",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:8080/66cf3e078f0e8494cf653794",
+					"raw": "localhost:8080/66d219caaa0a88319230102c",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"66cf3e078f0e8494cf653794"
+						"66d219caaa0a88319230102c"
 					]
 				}
 			},
