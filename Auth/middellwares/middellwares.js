@@ -5,8 +5,8 @@ require("dotenv").config();
 async function checkToken(req, res, next) {
   try {
     const accessToken = req.headers.authorization;
-    console.log("token:", Token);
-    if (!Token) {
+
+    if (!accessToken) {
       return res.status(403).josn({ message: "add the accessToken" });
     }
     const decodeToken = jwt.verify(accessToken, process.env.ACCESSTOKENSECRET);
