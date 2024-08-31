@@ -68,13 +68,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFobWVkQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcyNTA0NTEyMSwiZXhwIjoxNzI1MDQ4NzIxfQ.OKSvh0Y9SSRFOqJBdgksoxZtV7PLKQGM1lM0k9cv-1g",
+						"value": "",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"phone\",\r\n    \"price\":2500,\r\n    \"quantity\":16\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -131,7 +131,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmM4Y2JlMTRlNmE4NjI4YzZkMzI5MDYiLCJlbWFpbCI6Imhhc3NhbkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Imhhc3NhbiIsInJvbGUiOiJTdXBlckFkbWluIiwiaWF0IjoxNzI0ODQ5NTcwLCJleHAiOjE3MjQ4NTMxNzAsInN1YiI6IlN1cGVyQWRtaW4ifQ.h3wvHhsZgBKd34GFilXmuugCIS8feKTUQsylryd74Ns",
+						"value": "",
 						"type": "text"
 					}
 				],

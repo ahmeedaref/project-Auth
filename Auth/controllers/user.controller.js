@@ -50,11 +50,15 @@ const loginUser = async (req, res) => {
         id: user._id,
         email: user.email,
         role: user.role,
+        username: user.username,
       },
       process.env.ACCESSTOKENSECRET,
       { expiresIn: "1h" }
     );
-    res.status(200).json({ message: "Logged Successfully", accessToken });
+
+    res
+      .status(200)
+      .json({ message: "Logged Successfully", accessToken, refreshToken });
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }

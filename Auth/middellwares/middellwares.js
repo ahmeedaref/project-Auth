@@ -5,14 +5,15 @@ require("dotenv").config();
 async function checkToken(req, res, next) {
   try {
     const accessToken = req.headers.authorization;
-    if (!accessToken) {
+    console.log("token:", Token);
+    if (!Token) {
       return res.status(403).josn({ message: "add the accessToken" });
     }
     const decodeToken = jwt.verify(accessToken, process.env.ACCESSTOKENSECRET);
     if (!decodeToken) {
-      return res.status(403).json({ message: "invalid Token or ecpired" });
+      return res.status(403).json({ message: "invalid Token or expired" });
     } else {
-      next();
+      return next();
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
