@@ -53,11 +53,69 @@ const loginUser = async (req, res) => {
         username: user.username,
       },
       process.env.ACCESSTOKENSECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "30s" }
+    );
+    const refreshToken = jwt.sign(
+      {
+        id: user._id,
+        email: user.email,
+        role: user.role,
+        username: user.username,
+      },
+      process.env.REFRESHTOKEN,
+      {
+        expiresIn: "1h",
+      }
     );
 
-    res.status(200).json({ message: "Logged Successfully", accessToken });
+    res
+      .status(200)
+      .json({ message: "Logged Successfully", accessToken, refreshToken });
   } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
+const refresh_Token = async (req, res) => {
+  const refreshToken = req.headers.authorization;
+  if (!refreshToken) {
+    return res.status(404).json({ message: "refresh token not found " });
+  }
+
+  const decode = jwt.verify(refreshToken, process.env.REFRESHTOKEN);
+  try {
+    if (!decode) {
+      return res
+        .status(402)
+        .json({ message: "invalid refreshToken or expired" });
+    }
+
+    const newAccessToken = jwt.sign(
+      {
+        id: decode._id,
+        email: decode.email,
+        role: decode.role,
+        username: decode.username,
+      },
+      process.env.ACCESSTOKENSECRET,
+      { expiresIn: "30s" }
+    );
+    const newRefreshToken = jwt.sign(
+      {
+        id: decode._id,
+        email: decode.email,
+        role: decode.role,
+        username: decode.username,
+      },
+      process.env.REFRESHTOKEN,
+      {
+        expiresIn: "1h",
+      }
+    );
+    return res
+      .status(200)
+      .json({ newAccessToken, refreshToken: newRefreshToken });
+  } catch (err) {
+    console.log("error:", err);
     return res.status(500).json({ message: err.message });
   }
 };
@@ -124,6 +182,7 @@ const getproduct = async (req, res) => {
 module.exports = {
   registerUser,
   loginUser,
+  refresh_Token,
   createProduct,
   getProducts,
   getproduct,

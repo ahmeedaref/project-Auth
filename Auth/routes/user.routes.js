@@ -6,6 +6,7 @@ const router = express.Router();
 const {
   registerUser,
   loginUser,
+  refresh_Token,
   createProduct,
   getProducts,
   getproduct,
@@ -20,6 +21,8 @@ const {
 router.post("/register", registerUser);
 
 router.post("/login", loginUser);
+
+router.post("/refresh", refresh_Token);
 
 router.post("/", checkToken, createProduct);
 
